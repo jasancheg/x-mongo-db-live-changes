@@ -1,0 +1,67 @@
+{
+  "name": "x-db-oplog",
+  "version": "0.1.0",
+  "description": "Watch the mongodb the oplog",
+  "homepage": "https://github.com/jasancheg/x-db-oplog",
+  "author": {
+    "name": "Jose Antonio Sanchez Gonzalez",
+    "email": "jasancheg@gmail.com"
+  },
+  "main": "./index.js",
+  "scripts": {
+    "build": "npm run clean && ./node_modules/.bin/babel src -d lib",
+    "testDebug": "DEBUG=x-db-oplog* npm test",
+    "lint": "./node_modules/.bin/xo",
+    "prepare": "npm run build",
+    "clean": "rm -rf lib/",
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasancheg/x-db-oplog.git"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "eventemitter3": "^2.0.3",
+    "mongodb": "~2.2.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint-config-prettier": "^2.9.0",
+    "mocha": "^5.0.0",
+    "pre-commit": "^1.2.2",
+    "should": "^13.2.1",
+    "xo": "^0.18.2"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "license": "© Jose Antonio Sanchez",
+  "engines": {
+    "node": "^9.3.0",
+    "npm": "^5.6.0"
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "ignores": [
+      "test/**"
+    ],
+    "globals": [
+      "afterEach",
+      "describe",
+      "before",
+      "after",
+      "it"
+    ],
+    "rules": {
+      "object-curly-spacing": 0,
+      "no-unused-expressions": 0,
+      "no-negated-condition": 0,
+      "new-cap": 0
+    }
+  }
+}
